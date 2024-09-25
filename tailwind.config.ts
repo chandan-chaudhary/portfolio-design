@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import daisyui from "daisyui";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,8 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        landingPageFont: ["Anton", "sans-serif"],
+        paragraphFont: ["Space Grotesk", "sans-serif"],
+      },
     },
   },
-  plugins: [],
+  plugins: [daisyui],
 };
 export default config;
