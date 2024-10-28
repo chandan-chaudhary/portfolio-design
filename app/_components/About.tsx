@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image';
-import developerIMg from '../../assets/development.png';
+import developerIMg from '@/public/development.png';
 export default function About(){
     return(
         <main className='flex relative'>

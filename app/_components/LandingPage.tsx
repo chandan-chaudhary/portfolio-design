@@ -1,9 +1,9 @@
-import developerImg from "../../assets/development.png";
+import developerImg from '@/public/development.png';
 import Image from "next/image";
 export default function LandingPage() {
   return (
-    <main className=" flex  justify-center items-center gap-x-12 pt-24">
-      <div className="flex flex-col gap-y-8 w-6/12">
+    <main className=" flex flex-col justify-center items-center md:gap-x-12 pt-24 p-5 bg-zinc-500">
+      <div className="flex flex-col gap-y-8 ">
         <div className=" flex flex-col gap-y-3">
           <h3 className="text-5xl font-bold font-landingPageFont">
             I am Pablo Escobar Gabellia
@@ -22,7 +22,7 @@ export default function LandingPage() {
           </button>
         </div>
       </div>
-      <Image src={developerImg} alt="" className="w-5/12" />
+      <Image src={developerImg} alt="" className="" />
     </main>
   );
 }
