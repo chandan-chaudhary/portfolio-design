@@ -6,12 +6,12 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 type Theme = 'light' | 'dark';
 
 const ThemeContext = createContext({
-  theme: 'light' as Theme,
+  theme: 'dark' as Theme,
   toggleTheme: () => {},
 });
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark');
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';

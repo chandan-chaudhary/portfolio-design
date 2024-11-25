@@ -1,12 +1,12 @@
 "use Client";
 
 import Image from "next/image";
-import { skills, skillProps } from '@/app/skills/skills';
+import { skills, skillProps } from './skills';
 
 export default function Skills() {
   return (
     <main className="flex flex-col gap-y-8 items-center justify-center">
-      <h1 className="text-4xl font-normal font-landingPageFont">Skills</h1>
+      {/* <h1 className="text-4xl font-normal font-landingPageFont">Skills</h1> */}
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-8 xl:gap-24 p-5 ">
         {skills.map((skill: skillProps, idx: number) => (
           <div key={idx} className="flex flex-col items-center justify-center ">
