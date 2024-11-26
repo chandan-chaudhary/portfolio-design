@@ -9,13 +9,13 @@ import {
 } from "@/components/ui/navigation-menu"
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { Home, Phone, Projector, SkullIcon, LucideProps } from "lucide-react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
 
 export default function Header() {
-  const router = useRouter();
+  // const router = useRouter();
   const header = [
     { head: "Home", icon: Home, path: '/' }, { head: "Skills", icon: SkullIcon, path: '/skills' }, { head: "Projects", icon: Projector, path: '/projects' }, { head: "Contact", icon: Phone, path: '/' },];
   const [selectedHeader, setSelectedHeader] = useState<string>('Home');
@@ -28,7 +28,7 @@ export default function Header() {
     }
   ) => {
     setSelectedHeader(header.head)
-    router.push(header.path);
+    // router.push(header.path);
   }
 
   // function selectedHeader(header:string){
