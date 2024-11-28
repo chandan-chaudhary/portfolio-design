@@ -1,3 +1,5 @@
+
+'use client'
 // import developerImg from '@/public/development.png';
 
 import {
@@ -8,13 +10,13 @@ import {
     CardHeader,
 
 } from "@/components/ui/card"
-// import { motion } from "motion/react"
+import { motion } from "framer-motion"
 // import { Button } from '@/components/ui/button';
 // import { Code } from 'lucide-react';
 
 export default function Clients() {
     return (
-        // <motion.div animate={{ x: [0, 100, 0] }} >
+        <motion.div animate={{ x: [0, 100, 0] }} >
             <main className='flex flex-col gap-y-8 items-center justify-center px-3 sm:px-8 md:px-8 '>
                 {/* <h1 className='uppercase font-medium font-landingPageFont text-3xl xl:text-5xl '>Projects</h1> */}
                 <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-12'>
@@ -30,6 +32,6 @@ export default function Clients() {
                         </Card>)}
                 </div>
             </main>
-        // {/* </motion.div> */}
+        </motion.div>
     )
 }

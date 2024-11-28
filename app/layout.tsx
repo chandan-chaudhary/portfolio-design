@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+'use client'
+// import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./(dashboard)/_components/Header";
@@ -6,6 +7,8 @@ import { ThemeProvider } from "./(dashboard)/_components/ThemeContext";
 import Skills from "./(dashboard)/skills/page";
 import Clients from "./(dashboard)/customer-review/page";
 import Projects from "./(dashboard)/projects/page";
+// import { motion } from "motion/react"
+
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
 //   variable: "--font-geist-sans",
@@ -17,10 +20,10 @@ import Projects from "./(dashboard)/projects/page";
 //   weight: "100 900",
 // });
 
-export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Portfolio design web developer dev blockchain tech technology ai ml",
-};
+// export const metadata: Metadata = {
+//   title: "Portfolio",
+//   description: "Portfolio design web developer dev blockchain tech technology ai ml",
+// };
 
 export default function RootLayout({
   children,
