@@ -4,9 +4,7 @@
 import "./globals.css";
 import Header from "./(dashboard)/_components/Header";
 import { ThemeProvider } from "./(dashboard)/_components/ThemeContext";
-import Skills from "./(dashboard)/skills/page";
-import Clients from "./(dashboard)/customer-review/page";
-import Projects from "./(dashboard)/projects/page";
+
 // import { motion } from "motion/react"
 
 // const geistSans = localFont({
@@ -33,14 +31,9 @@ export default function RootLayout({
   return (
     <ThemeProvider>
       <html lang="en" >
-        <body className="flex flex-col items-center gap-8  py-12 bg-zinc-300 dark:bg-[#0A1828] lg:px-12 md:px-8 xl:px-64 w-full ">
+        <body className="flex flex-col items-center justify-center gap-8  py-12 bg-white dark:bg-black  text-black dark:text-white w-full ">
           <Header />
-          <div className="flex flex-col gap-y-44">
-            {children}
-            <Skills />
-            <Projects />
-            <Clients />
-          </div>
+          {children}
         </body>
       </html>
     </ThemeProvider>

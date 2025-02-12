@@ -20,11 +20,11 @@ export default function Header() {
     { head: "Home", icon: Home, path: '/' }, { head: "Skills", icon: SkullIcon, path: '/skills' }, { head: "Projects", icon: Projector, path: '/projects' }, { head: "Contact", icon: Phone, path: '/' },];
   const [selectedHeader, setSelectedHeader] = useState<string>('Home');
 
-  const handleNavigationClick = (header: 
-     {
-    head: string;
-    icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;  // Use ReactNode to represent a React component
-    path: string;
+  const handleNavigationClick = (header:
+    {
+      head: string;
+      icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;  // Use ReactNode to represent a React component
+      path: string;
     }
   ) => {
     setSelectedHeader(header.head)
@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <div className="">
-      <main className="xs:max-md:hidden bg-gray-400 dark:bg-[#102844]  rounded-full w-full items-center justify-center p-1 ">
+      <main className="xs:max-md:hidden bg-gray-400 dark:bg-[#102844]  rounded-full w-fit items-center justify-center p-1 ">
         <div className="w-full flex justify-center items-center">
           <NavigationMenu className="">
             <NavigationMenuList className=" gap-x-8 lg:gap-x-12 flex items-center ">
