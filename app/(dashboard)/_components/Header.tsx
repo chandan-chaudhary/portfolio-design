@@ -37,23 +37,22 @@ export default function Header() {
 
   return (
     <div className="">
-      <main className="xs:max-md:hidden bg-gray-400 dark:bg-[#102844]  rounded-full w-fit items-center justify-center p-1 ">
+      <main className="xs:max-md:hidden bg-gray-400 dark:bg-transparent border  bg-opacity-20 backdrop-blur-xl rounded-full w-fit items-center justify-center p-1 ">
         <div className="w-full flex justify-center items-center">
           <NavigationMenu className="">
-            <NavigationMenuList className=" gap-x-8 lg:gap-x-12 flex items-center ">
-              {
-                header.map((header, idx) =>
-                  <NavigationMenuItem onClick={() => handleNavigationClick(header)} key={idx} className={` ${selectedHeader === header.head && 'bg-[#09182a] text-white rounded-full '} p-2 px-5 text-xl font-mono cursor-pointer font-normal flex items-center gap-2`}>
-                    <header.icon className="size-6" />
-                    <h3>{header.head}</h3>
-                  </NavigationMenuItem>
-                )
-              }
-              <ThemeToggle />
-            </NavigationMenuList>
+        <NavigationMenuList className=" gap-x-8 lg:gap-x-12 flex items-center ">
+          {
+            header.map((header, idx) =>
+          <NavigationMenuItem onClick={() => handleNavigationClick(header)} key={idx} className={` ${selectedHeader === header.head && 'bg-[#09182a] text-white rounded-full '} p-2 px-5 text-xl font-mono cursor-pointer font-normal flex items-center gap-2`}>
+            <header.icon className="size-6" />
+            <h3>{header.head}</h3>
+          </NavigationMenuItem>
+            )
+          }
+          <ThemeToggle />
+        </NavigationMenuList>
           </NavigationMenu>
         </div>
-
       </main>
       <main className="md:hidden flex justify-between gap-5 w-full px-12 items-center ">
         <ThemeToggle />

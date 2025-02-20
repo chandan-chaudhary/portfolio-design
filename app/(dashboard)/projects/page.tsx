@@ -21,7 +21,7 @@ export default function Projects() {
                 <h1 className='font-bold text-3xl'>Projects</h1>
                 <p className='text-lg'>Here are some of the projects I have worked on.</p>
             </div>
-            <div className='grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 gap-5'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5'>
                 {projects.map((project, idx) =>
                     <Card key={idx} className='cursor-pointer pb-2'>
                         <CardContent className='flex flex-col items-start'>
