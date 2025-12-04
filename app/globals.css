@@ -24,6 +24,12 @@ body {
 } */
 @layer base {
   :root {
+    /* App-level gradient variables (H S% L%) - used by tailwind via --gradient-* */
+  /* Light-mode gradient tuned to the previous landing look (indigo -> sky -> emerald) */
+  --gradient-from: 240 100% 94%; /* approx indigo-50 */
+  --gradient-via: 200 100% 94%;  /* approx sky-50 */
+  --gradient-to: 150 90% 94%;   /* approx emerald-50 */
+
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -51,6 +57,12 @@ body {
     --radius: 0.5rem
   }
   .dark {
+    /* Dark theme gradient variables */
+  /* Dark-mode gradient tuned to slate/purple -> black */
+  --gradient-from: 220 27% 12%;  /* approx slate-900 */
+  --gradient-via: 270 70% 10%;   /* deep purple */
+  --gradient-to: 0 0% 0%;       /* black */
+
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
@@ -83,5 +95,12 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    /* Use local next/font variables (set on <html> via layout.tsx) if available */
+    font-family: var(--font-geist-sans, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial);
+  }
+
+  /* Use the mono font for code blocks when available */
+  code, pre, kbd, samp {
+    font-family: var(--font-geist-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace);
   }
 }

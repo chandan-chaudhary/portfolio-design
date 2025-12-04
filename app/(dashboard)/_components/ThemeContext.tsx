@@ -1,29 +1,36 @@
-// context/ThemeContext.tsx
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from 'react';
+// Replaced the custom theme context with `next-themes`-backed provider.
+// This uses the `class` attribute on <html> to toggle dark mode (Tailwind `darkMode: ['class']`).
 
-type Theme = 'light' | 'dark';
-
-const ThemeContext = createContext({
-  theme: 'dark' as Theme,
-  toggleTheme: () => {},
-});
+import {
+  ThemeProvider as NextThemeProvider,
+  useTheme as useNextTheme,
+} from "next-themes";
+import { ReactNode } from "react";
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>('dark');
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
-  };
-
+  // Use a stable server default to avoid hydration mismatches. We pick 'light'
+  // as the server-rendered theme. The client can still toggle to dark.
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <NextThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem={false}
+    >
       {children}
-    </ThemeContext.Provider>
+    </NextThemeProvider>
   );
 };
 
-export const useTheme = () => useContext(ThemeContext);
+// Adapter hook so existing components can continue to call `useTheme()`.
+export const useTheme = () => {
+  const { theme, setTheme, resolvedTheme } = useNextTheme();
+  const current = resolvedTheme ?? theme ?? "light";
+
+  return {
+    theme: current as "light" | "dark" | string,
+    setTheme,
+    toggleTheme: () => setTheme(current === "dark" ? "light" : "dark"),
+  };
+};

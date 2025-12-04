@@ -1,29 +1,32 @@
-import { LinkedInLogoIcon } from '@radix-ui/react-icons';
-import Link from 'next/link';
-import React from 'react';
+"use client";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Mail } from "lucide-react";
 
 export default function Footer() {
-    return (
-        <section className="flex flex-col items-center justify-center bg-black text-white text-center px-4">
-            {/* Contact Badge */}
-            <div className="bg-white text-black text-sm font-medium px-4 py-1 rounded-full mb-4">
-                Contact
-            </div>
+  return (
+    <motion.section
+      className="flex flex-col items-center justify-center bg-background text-foreground text-center p-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="bg-primary text-primary-foreground text-sm font-medium px-4 py-1 rounded-full mb-4">
+        Contact
+      </div>
 
-            {/* Heading */}
-            <h2 className="text-4xl font-bold mb-2">Get in Touch</h2>
+      <h2 className="text-4xl font-bold mb-2">Get in Touch</h2>
 
-            {/* Description with Link */}
-            <p className="text-gray-400 text-lg flex gap-x-1 items-center">
-                Want to Contact? DM{" "}
-                <Link
-                    href="#"
-                    className="text-blue-400 hover:underline flex gap-x-1 items-center"
-                >
-                  on
-                    <LinkedInLogoIcon style={{ fontSize: '52px' }} />
-                </Link>
-            </p>
-        </section>
-    );
-};
+      <p className="text-muted-foreground text-lg flex gap-x-1 items-center">
+        Want to contact? Email me at
+        <Link
+          href="mailto:chandanchaudhary3949@gmail.com"
+          className="ml-2 text-primary hover:underline flex gap-x-2 items-center"
+          aria-label="Send email to chandanchaudhary@gmail.com"
+        >
+          <Mail className="w-5 h-5" />
+        </Link>
+      </p>
+    </motion.section>
+  );
+}
